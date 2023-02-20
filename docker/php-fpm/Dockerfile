@@ -21,12 +21,10 @@ RUN git config --global user.name "Thomas Frenot"
 ENV NODE_VERSION=18.14.1
 RUN apt install -y curl
 ENV NVM_DIR=/root/.nvm
+RUN mkdir /root/.nvm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN npm install -g yarn
-
-# Install symfony
-RUN composer install
