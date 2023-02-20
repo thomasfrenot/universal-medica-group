@@ -6,14 +6,19 @@ Vous devez disposer de docker installé sur votre machine.
 ## Installation
 cloner le repo `git clone git@github.com:thomasfrenot/universal-medica-group.git`
 
-lancer l'environnement `docker-compose up -d`
+Lancer l'environnement `docker-compose up -d`
 
-lancer un composer install
+Lancer l'installation des composants (composer/yarn)
 `docker-compose exec php-fpm composer install`
 
-charger les utilisateurs en bdd `docker-compose exec php-fpm php bin/console doctrine:fixtures:load`
+Charger la structure de la bdd 
+`docker-compose exec php-fpm php bin/console doctrine:schema:create`
 
-consulter l'url : `http://localhost:26000/`
+Charger les utilisateurs en bdd 
+`docker-compose exec php-fpm php bin/console doctrine:fixtures:load`
+
+## Consultation du l'application
+`http://localhost:26000/`
 
 Utilisateur / mot de passe (Espace) :
 
