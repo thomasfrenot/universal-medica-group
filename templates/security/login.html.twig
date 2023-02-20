@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion {{ space }}{% endblock %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_index') }}">Home</a></li>
+        </ol>
+    </nav>
+
+    <h1 class="h3 mb-3 font-weight-normal text-{{ colorSpace }}">Connexion {{ space }}</h1>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form method="post" class="text-{{ colorSpace }}">
+        <div class="form-group">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" value="{{ last_username }}" name="_username" id="inputEmail" placeholder="Votre email" class="form-control" autocomplete="email" required autofocus />
+        </div>
+        <div class="form-group mt-3">
+            <label for="inputPassword" class="form-label">Mot de passe</label>
+            <input type="password" name="_password" id="inputPassword" class="form-control" autocomplete="current-password" required />
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+        <input type="hidden" name="_target_path" value="{{ path(redirectTo) }}">
+
+        <button class="btn btn-lg btn-{{ colorSpace }} mt-3" type="submit">Connexion</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_index') }}">Home</a></li>
+        </ol>
+    </nav>
+    <div class="text-info">
+        <h1>Espace administrateur</h1>
+        <p>Bienvenue sur l'espace administrateur</p>
+        <a class="btn btn-info btn-sm" href="{{ path('admin_logout') }}">Déconnexion</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Universal Medica Group - Test Technique{% endblock %}
+
+{% block content %}
+    <h2>Bonjour et bienvenue !</h2>
+    <p>Vous souhaitez accéder à :</p>
+    <div class="d-flex justify-content-around align-items-center mb-5">
+        <a class="btn btn-lg btn-primary" href="{{ path('app_profile') }}">Espace utilisateur</a>
+        <a class="btn btn-lg btn-info" href="{{ path('app_admin') }}">Espace administrateur</a>
+    </div>
+
+    <code>
+        <h2>Mini projet</h2>
+        <h3>1/ Ebauche de site</h3>
+        <p>Le projet doit contenir une page de login, de FrontEnd et de BackEnd avec des utilisateurs avec
+        login / mot de passe. Il doit y avoir au moins un compte utilisateur Front qui doit pouvoir se
+        connecter et accéder à la page Front End, un compte utilisateur Back qui doit pouvoir se connecter
+            et accéder à la page Back End.</p>
+        <p>Vous êtes libres d’utiliser les technologies décrites dans la partie 2. Technologies autorisées.</p>
+        <p>Vous pouvez personnaliser les pages comme vous le souhaiter. Vous êtes libres d’ajouter et
+            d’adapter les fonctionnalités si vous semblez cela intéressant ou nécessaire.</p>
+
+        <h3>2/ Techniologies autorisées</h3>
+        <ul>
+            <li>Symfony : Version >= 4.4</li>
+            <li>PHP : Version >= 8.0</li>
+            <li>MySQL : Version >= 5.7</li>
+        </ul>
+    </code>
+{% endblock %}
